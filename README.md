@@ -1,3 +1,2 @@
 # Netdroid
-An easy information gathering tool used for penetration testing
-Created for beginners.
+A Network Analysis tool Created for beginners.
